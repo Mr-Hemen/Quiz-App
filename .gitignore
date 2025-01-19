@@ -1,0 +1,54 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+*.egg-info/
+.installed.cfg
+*.egg
+dist/
+build/
+develop-eggs/
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# If your Django project uses MySQL or PostgreSQL:
+*.pyo
+*.pyd
+*.pdb
+*.dll
+*.pkl
+
+# Ignore the migrations folder
+*/migrations/
+
+# Media files
+media/
+
+# Static files
+staticfiles/
+
+# Ignore specific IDEs and editors
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.swp
+
+# Ignore coverage reports
+.coverage
+*.cover
+
+# Ignore dependency folders
+node_modules/
