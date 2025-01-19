@@ -1,0 +1,24 @@
+{% extends 'quiz/base.html' %}
+
+{% block title %}
+
+Quiz Detial
+{% endblock %}
+
+{% block content %}
+
+    <h1>{{ quiz.title }}</h1>
+    <form method="post">
+    {% csrf_token %}
+    {% for question in questions %}
+        <div>
+            <p>{{ question.text }}</p>
+             <label><input type="radio" name="question_{{ question.id }}" value="A">{{ question.option_1 }}</label>
+             <label><input type="radio" name="question_{{ question.id }}" value="B">{{ question.option_2 }}</label>
+             <label><input type="radio" name="question_{{ question.id }}" value="C">{{ question.option_3 }}</label>
+             <label><input type="radio" name="question_{{ question.id }}" value="D">{{ question.option_4 }}</label>
+        </div>
+    {% endfor %}
+    <button type="submit">Submit</button>
+    </form>
+{% endblock %}
