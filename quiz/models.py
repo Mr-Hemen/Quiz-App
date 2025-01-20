@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 
@@ -26,10 +27,16 @@ class Question(models.Model):
 
 
 class UserQuiz(models.Model):
-    user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
     score = models.IntegerField(default=0)
     completed_at = models.DateTimeField(auto_now_add=True)
+    national_id = models.CharField(max_length=10, primary_key=True, unique=True)
+    email = models.EmailField(max_length=254, unique=True)
+    birth_date = models.DateField(null=False, blank=False)
+    
+    REQUIRED_FIELDS = ['email', 'national_id', 'first_name', 'last_name']
+
 
     def __str__(self):
         return f"{self.user.username} - {self.quiz.title}"
