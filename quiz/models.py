@@ -34,7 +34,8 @@ class UserQuiz(models.Model):
     national_id = models.CharField(max_length=10, primary_key=True, unique=True)
     email = models.EmailField(max_length=254, unique=True)
     birth_date = models.DateField(null=False, blank=False)
-    
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
     REQUIRED_FIELDS = ['email', 'national_id', 'first_name', 'last_name']
 
 
